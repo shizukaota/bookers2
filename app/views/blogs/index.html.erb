@@ -1,0 +1,46 @@
+
+<html>
+<body>
+
+
+	<table>
+		<thead>
+			<tr>
+				<th>Title </th>
+				<th> Body </th>
+
+			</thead>
+			<h1>Books</h1>
+
+			<tbody>
+
+				<% @blogs.each do |blog| %>
+
+				<tr>
+					<td><%= blog.title %></td>
+					<td><%= blog.body %></td>
+					<td><%= link_to "Show", blog_path(blog) %></td>
+					<td><%= link_to "Edit", edit_blog_path(blog) %></td>
+					<td><%= link_to "Destory", blog_path(blog), method: :delete,data: { confirm: "You sure?" } %></td>
+				</tr>
+				<% end %>
+
+			</tbody>
+		</table>
+
+
+		<h1>NEW BOOK</h1>
+		<%= form_for(@blog) do |f| %>
+
+		<h4>Title</h4>
+		<%= f.text_field :title %>
+
+		<h4>Body</h4>
+		<%= f.text_area :body %>
+		<%= f.submit 'Create Book' %>
+		<% if flash[:id] %>
+		<p><%= flash[:id] %></p>
+		<% end %>
+		<% end %>
+	</body>
+	</html>
