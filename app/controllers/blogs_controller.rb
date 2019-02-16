@@ -27,7 +27,9 @@ class BlogsController < ApplicationController
 		redirect_to blogs_path
 	end
 	def edit
+		@blogs = Blog.all
 		@blog = Blog.find(params[:id])
+		p @blogs
 	end
 	def destroy
 		blog = Blog.find(params[:id])
