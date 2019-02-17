@@ -21,7 +21,7 @@
 					<td><%= blog.body %></td>
 					<td><%= link_to "show",blog_path(blog),class:"show_#{blog.id}"%></td>
 					<td><%= link_to "edit" ,edit_blog_path(blog),class:"edit_#{blog.id}"%></td>
-					<td><%= link_to "destory",blog_path(blog),class:"destory_#{blog.id}", method: :delete,data: { confirm: "You sure?" } %></td>
+					<td><%= link_to "destroy",blog_path(blog), class:"destroy_#{blog.id}", method: :delete,data: { confirm: "You sure?" } %></td>
 				</tr>
 				<% end %>
 

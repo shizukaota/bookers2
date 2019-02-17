@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
 	def show
 		@blog = Blog.find(params[:id])
 	end
-	def destory
+	def destroy
 		blog = Blog.find(params[:id])
 		blog.delete
 		redirect_to blogs_path
